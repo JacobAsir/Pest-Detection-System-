@@ -1,4 +1,4 @@
-# 🌾 Weather-Based Pest Detection System
+# 🌾 Pest Detection System
 
 An intelligent agricultural pest detection system that combines computer vision, weather data analysis, and AI-powered chatbot assistance to help farmers identify and manage crop pests effectively.
 
