@@ -29,6 +29,9 @@ An intelligent agricultural pest detection system that combines computer vision,
 - **Real-time Processing**: Instant results with progress indicators
 - **Mobile Responsive**: Works on desktop and mobile devices
 
+### **Supported Pest Detection**
+- brown-planthopper, green-leafhopper, leaf-folder, rice-bug, stem-borer, whorl-maggot
+
 ## 🛠️ Technology Stack
 
 - **Frontend**: Streamlit
