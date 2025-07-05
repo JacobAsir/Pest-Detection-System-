@@ -2,7 +2,7 @@ import streamlit as st
 import os
 from PIL import Image
 import numpy as np
-from infer import inference, handle_inference_error
+from infer import inference
 from chat import chatbot, getweatherdata, class_info_dict
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
