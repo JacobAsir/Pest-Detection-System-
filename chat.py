@@ -1,6 +1,6 @@
 from langchain_core.prompts import PromptTemplate
 from langchain_groq import ChatGroq
-from langchain.chains import LLMChain
+from langchain_core.chains import LLMChain
 import geopy
 import requests
 from geopy.geocoders import Nominatim
