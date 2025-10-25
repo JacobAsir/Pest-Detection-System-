@@ -1,6 +1,6 @@
 from langchain_core.prompts import PromptTemplate
 from langchain_groq import ChatGroq
-from langchain_core.chains import LLMChain
+from langchain_core.output_parsers import StrOutputParser
 import geopy
 import requests
 from geopy.geocoders import Nominatim
@@ -221,16 +221,17 @@ def chatbot(info, history, message, weather_data, gdd, language="English"):
         input_variables=['info', 'weather_info', 'gdd', 'history', 'message']
     )
 
-    chain = LLMChain(llm=llm, prompt=PROMPT)
+    output_parser = StrOutputParser()
+    chain = PROMPT | llm | output_parser
 
     try:
-        response = chain.predict(
-            info=info,
-            weather_info=weather_info,
-            gdd=gdd,
-            history="",  # Simplified - not using history for conciseness
-            message=message
-        )
+        response = chain.invoke({
+            "info": info,
+            "weather_info": weather_info,
+            "gdd": gdd,
+            "history": "",  # Simplified - not using history for conciseness
+            "message": message
+        })
         return response.strip()
     except Exception as e:
         print(f"Error generating response: {e}")
